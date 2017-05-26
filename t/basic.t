@@ -51,7 +51,7 @@ BEGIN {
   sub test_process :POST Local {
     my ($self, $c) = @_;
     my $form = $c->model('Form::Email',bbb=>2000);
-    Test::Most::ok $form->is_valid;
+    Test::Most::ok $form->validated;
     $c->res->body($form->render)
   }
 
@@ -64,7 +64,7 @@ BEGIN {
     my ($self, $c) = @_;
   }
 
-  sub post_form :POST Path('') Args(0) FormModelTarget(Form::Email) {
+  sub post_form :POST Path('') Args(0) {
     my ($self, $c) = @_;
   }
 

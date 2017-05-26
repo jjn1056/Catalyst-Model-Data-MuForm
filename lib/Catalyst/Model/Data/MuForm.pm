@@ -4,6 +4,8 @@ use Moo;
 use Module::Pluggable::Object;
 use Template::Tiny;
 
+our $VERSION = '0.001';
+
 extends 'Catalyst::Model';
 
 has _application => (is => 'ro', required=>1);
